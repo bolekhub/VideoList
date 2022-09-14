@@ -49,7 +49,7 @@ enum SLHTTPMethod: String {
 }
 
 
-enum APIEnv: SLEnvironment {
+enum APIEnv: SLEnvironmentProtocol {
     case dev
     case pro
     
@@ -81,7 +81,7 @@ enum APIEnv: SLEnvironment {
     }
 }
 
-// in case parameters does not go in the url itself as query strgin
+    // in case parameters does not go in the url itself as query strgin
 enum SLParameterType {
     case body(SLBodyParameterEncodingType)
     case requestURL([String: String])
@@ -104,4 +104,8 @@ enum SLParameterType {
     }
 }
 
-
+struct ServiceResponse: SLResponseProtocol {
+    var data: Data
+    var headers: [AnyHashable : Any]?
+    var code: Int
+}

@@ -11,22 +11,23 @@ extension SLNetworkSession: NetworkSessionProtocol {
         let task = session?.dataTask(with: request, completionHandler: completion)
         return task
     }
-    //     typealias Handler = (progress: SLProgresHandler, completion: ((URL?, URLResponse?, Error?) -> Void)? )
 
-    func downloadTaskWithRequest(_ request: URLRequest, progress: SLProgresHandler, completion: @escaping (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask? {
-        let downloadTask = session?.downloadTask(with: request)
-//        setHandler(handler: (progress, completion), for: downloadTask)
+    func downloadTaskWithRequest(_ request: URLRequest, progress: SLProgresHandler?, completion: @escaping (URL?, URLResponse?, Error?) -> Void) -> URLSessionDownloadTask? {
+        guard let networkSession = self.session else { return nil }
+        let downloadTask = networkSession.downloadTask(with: request)
+        setHandler(handler: (progress, completion), for: downloadTask)
         return downloadTask
     }
 }
 
 extension SLNetworkSession: URLSessionTaskDelegate {
     func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
-        
-        guard let handlers = getHandlersForTask(task) else { return }
+        guard let handlers = getHandlersForTask(task) else {
+            return
+        }
         let progress = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
         DispatchQueue.main.async {
-            handlers.progress(progress)
+            handlers.progress?(progress)
         }
         self.setHandler(handler: nil, for: task)
     }
@@ -36,6 +37,9 @@ extension SLNetworkSession: URLSessionTaskDelegate {
               let handler = getHandlersForTask(task) else {
                   return
               }
-            //TODO: handle download
+        DispatchQueue.main.async {
+            handler.completion?(nil, downloadTask.response, downloadTask.error)
+        }
+        self.setHandler(handler: nil, for: task)
     }
 }

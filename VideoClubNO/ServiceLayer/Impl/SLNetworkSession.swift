@@ -10,7 +10,7 @@ import Foundation
 final class SLNetworkSession: NSObject {
     var session: URLSession?
     
-    typealias Handler = (progress: SLProgresHandler, completion: ((URL?, URLResponse?, Error?) -> Void)? )
+    typealias Handler = (progress: SLProgresHandler?, completion: ((URL?, URLResponse?, Error?) -> Void)? )
     
     private var taskHandlers: [URLSessionTask: Handler] = [:]
     
@@ -18,6 +18,7 @@ final class SLNetworkSession: NSObject {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForResource = 20
         configuration.waitsForConnectivity = true
+        
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 3
         queue.qualityOfService = .userInitiated
@@ -35,5 +36,13 @@ final class SLNetworkSession: NSObject {
     
     func setHandler(handler: Handler?, for task:URLSessionTask) {
         taskHandlers[task] = handler
+    }
+    
+    /**
+     The session object keeps a strong reference to the delegate until your app exits or explicitly invalidates the session. If you do not invalidate the session by calling the invalidateAndCancel() or finishTasksAndInvalidate() method, your app leaks memory until it exits.
+     **/
+    deinit {
+        session?.invalidateAndCancel()
+        session = nil
     }
 }

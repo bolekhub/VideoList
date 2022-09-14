@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073190D628D2274000D8FD78 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190D528D2274000D8FD78 /* Employee.swift */; };
+		073190D828D2276300D8FD78 /* EmployeeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190D728D2276300D8FD78 /* EmployeeResponse.swift */; };
 		0776394A28CF6FF400DA2498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776394928CF6FF400DA2498 /* AppDelegate.swift */; };
 		0776394C28CF6FF400DA2498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776394B28CF6FF400DA2498 /* SceneDelegate.swift */; };
 		0776394E28CF6FF400DA2498 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776394D28CF6FF400DA2498 /* ViewController.swift */; };
@@ -23,6 +25,7 @@
 		0776398428CF714A00DA2498 /* SLNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398328CF714A00DA2498 /* SLNetworkSession.swift */; };
 		0776398628CF717400DA2498 /* SLNetworkSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398528CF717400DA2498 /* SLNetworkSession+Extension.swift */; };
 		0776398828CF718F00DA2498 /* SLRequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398728CF718F00DA2498 /* SLRequestDispatcher.swift */; };
+		0776398A28D0D91E00DA2498 /* IntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398928D0D91E00DA2498 /* IntegrationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		073190D528D2274000D8FD78 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		073190D728D2276300D8FD78 /* EmployeeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeResponse.swift; sourceTree = "<group>"; };
 		0776394628CF6FF400DA2498 /* VideoClubNO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoClubNO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776394928CF6FF400DA2498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0776394B28CF6FF400DA2498 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		0776398328CF714A00DA2498 /* SLNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLNetworkSession.swift; sourceTree = "<group>"; };
 		0776398528CF717400DA2498 /* SLNetworkSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLNetworkSession+Extension.swift"; sourceTree = "<group>"; };
 		0776398728CF718F00DA2498 /* SLRequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLRequestDispatcher.swift; sourceTree = "<group>"; };
+		0776398928D0D91E00DA2498 /* IntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				0776396028CF6FF700DA2498 /* VideoClubNOTests.swift */,
+				0776398928D0D91E00DA2498 /* IntegrationTest.swift */,
+				073190D528D2274000D8FD78 /* Employee.swift */,
+				073190D728D2276300D8FD78 /* EmployeeResponse.swift */,
 			);
 			path = VideoClubNOTests;
 			sourceTree = "<group>";
@@ -312,6 +321,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073190D828D2276300D8FD78 /* EmployeeResponse.swift in Sources */,
+				0776398A28D0D91E00DA2498 /* IntegrationTest.swift in Sources */,
+				073190D628D2274000D8FD78 /* Employee.swift in Sources */,
 				0776396128CF6FF700DA2498 /* VideoClubNOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

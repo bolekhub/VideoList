@@ -7,46 +7,36 @@
 
 import Foundation
 
-protocol RequestProtocol {
-    var path: String { get }
-    var method: RequestMethod { get }
-    var headers: ReaquestHeaders? { get }
-    var parameters: RequestParameters? { get }
-    var requestType: RequestType { get }
-    var responseType: ResponseType { get }
-    var progressHandler: ProgressHandler? { get set }
-    
-}
-
 struct SLRequest {
     private let jsonEncoder = JSONEncoder()
-    var requestType: SLParameterType
-    var method: SLHTTPMethod
-    var url: String = ""
-    var headers: [SLHeaderField: String] = [:]
+    private var requestType: SLParameterType
+    private var method: SLHTTPMethod
+    private var url: String = ""
     var body: Data? = nil
+    var headers: [SLHeaderField: String] = [:]
     var trafficType: SLRequestType = .data
     var path: String? = nil
 }
 
-
 extension SLRequest {
-    
-    init(requestType: SLParameterType, url: String, method: SLHTTPMethod = .GET, path: String?) {
-        self.path = path
+        /// This is the basic unit of a request. Contains al elements that dispatcher will throw to network session. Its added to the SLOperation before doing request.
+        /// - Parameters:
+        ///   - requestType: Specify the type of reques wich can be body or standard qquery items. Body can be     formdata, urlencoded, json so far. body option have asociated types wich guide you on how request should be made
+        ///   - method: method automatically is set according to request type. You can specify it if desired
+        ///   - serviceName: the name of the service. usualy is the last path component. This parameter will be added to environment baseurl
+    init(requestType: SLParameterType, method: SLHTTPMethod = .GET, serviceName: String) {
+        self.path = serviceName
         self.requestType = requestType
-        self.url = url
         self.method = method
         
         switch requestType {
         case .requestURL(let requestParams):
-            if requestParams.keys.count > 0, let resolveURL = URL(string: self.url) {
-                var components = URLComponents(url: resolveURL, resolvingAgainstBaseURL: true)
-                components?.queryItems = requestParams.map({ key, value in
-                    return URLQueryItem(name: key, value: String(describing: value))
-                })
-                self.url = components?.url?.description ?? ""
+           guard !requestParams.isEmpty else { return }
+            let components = requestParams.asQueryItems
+            guard let stringComponents = components.string else {
+                return
             }
+            self.path?.append(stringComponents)
             self.method = method
             
         case .body(let enconding):
@@ -58,13 +48,12 @@ extension SLRequest {
                 self.method = .POST
                 
             case let .urlencoded(param):
-                if param.keys.count > 0, let resolveURL = URL(string: self.url) {
-                    var components = URLComponents(url: resolveURL, resolvingAgainstBaseURL: false)
-                    components?.queryItems = param.map({ key, value in
-                        return URLQueryItem(name: key, value: String(describing: value))
-                    })
-                    self.body = components?.query?.data(using: .utf8, allowLossyConversion: true)
+                guard !param.isEmpty else { return }
+                let orderedParams = param.sorted { this, next in
+                 return this.key > next.key
                 }
+                let components = orderedParams.asQueryItems
+                self.body = components.query?.data(using: .utf8, allowLossyConversion: true)
                 self.headers = enconding.headerValue
                 self.method = .POST
                 
@@ -78,16 +67,7 @@ extension SLRequest {
     }
 }
 
-extension SLRequest {
-    func debugPrint() {
-        print("Headers: \(headers.mapValues({$0}))")
-        
-        if let bodyo = self.body, let str = String(data: bodyo, encoding: .utf8) {
-            print("Body : \n \(str) \n")
-        }
-        print("URL: \(self.url)")
-    }
-    
+private extension SLRequest {
     func formDataFromParameters(_ parameters: [String: Any]) -> String {
         var stringBody: String = ""
         let boundary = "Boundary-\(UUID().uuidString)"
@@ -108,11 +88,11 @@ extension SLRequest {
 }
 
 extension SLRequest {
-    func urlRequest(environment: SLEnvironment) -> URLRequest? {
+    func urlRequest(environment: SLEnvironmentProtocol) -> URLRequest? {
         guard let url = URL(string: environment.baseURL) else {
             return nil
         }
-        let fullUrl = url.appendingPathComponent(self.path)
+        let fullUrl = url.appendingPathComponent(self.path ?? "", isDirectory: false)
         var urlRequest = URLRequest(url: fullUrl,
                                     cachePolicy: .useProtocolCachePolicy,
                                     timeoutInterval: environment.timeout)
@@ -121,7 +101,7 @@ extension SLRequest {
         }
         urlRequest.httpBody = self.body
         urlRequest.httpMethod = self.method.rawValue
-        urlRequest.url = URL(string: self.url)
+        urlRequest.url = fullUrl
         return urlRequest
     }
     
@@ -134,6 +114,26 @@ extension Encodable {
     func encodeObject() -> String? {
         let data = try? JSONEncoder().encode(self)
         return data.flatMap({ String(data: $0, encoding: .utf8) })
+    }
+}
 
+extension Sequence where Iterator.Element == (key: String, value: AnyObject) {
+    var asQueryItems: URLComponents {
+        var components = URLComponents()
+        components.queryItems = self.map({ key, value in
+            return URLQueryItem(name: key, value: String(describing: value))
+        })
+        return components
+    }
+}
+
+extension Sequence where Iterator.Element == (key: String, value: String) {
+    var asQueryItems: URLComponents {
+        var components = URLComponents()
+        let ordered = self.sorted(by: {$0.key > $1.key})
+        components.queryItems = ordered.map({ key, value in
+            return URLQueryItem(name: key, value:  value)
+        })
+        return components
     }
 }

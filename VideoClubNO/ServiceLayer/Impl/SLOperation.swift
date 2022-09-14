@@ -8,7 +8,7 @@
 import Foundation
 
 final class SLOperation: SLOperationProtocol {
-    typealias Output = SLResponse?
+    typealias Output = SLResponseProtocol?
     private var task: URLSessionTask?
     var request: SLRequest
     
@@ -20,7 +20,7 @@ final class SLOperation: SLOperationProtocol {
         task?.cancel()
     }
 
-    func execute(in requestDispatcher: RequestDispatcherProtocol, completion: @escaping (SLResponse?) -> Void) {
+    func execute(in requestDispatcher: RequestDispatcherProtocol, completion: @escaping (SLResponseProtocol?) -> Void) {
         let baseUrl = requestDispatcher.environment.baseURL
         self.request.setBaseURL(baseUrl)
         task = requestDispatcher.execute(request: request, completion: { result in

@@ -12,20 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        struct Employee: Encodable {
-            let name: String
-            let salary: Int
-            let age: Int
-        }
-        let requestPerson = Employee(name: "Jhon", salary: 43000, age: 45)
-        let requestDispatcher = SLRequestDispatcher(env: APIEnv.dev, networkSession: SLNetworkSession())
-        let personRequest = SLRequest(requestType: .body(.json(requestPerson)), url: "/create")
-        let operation = SLOperation(personRequest)
-        
-        operation.execute(in: requestDispatcher) { response in
-            print("finished")
-        }
-        
         return true
     }
 
