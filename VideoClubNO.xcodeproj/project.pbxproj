@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		073190D628D2274000D8FD78 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190D528D2274000D8FD78 /* Employee.swift */; };
 		073190D828D2276300D8FD78 /* EmployeeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190D728D2276300D8FD78 /* EmployeeResponse.swift */; };
+		073190DB28D252C800D8FD78 /* ServiceLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 073190DA28D252C800D8FD78 /* ServiceLayer */; };
+		073190DD28D253EE00D8FD78 /* VideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190DC28D253EE00D8FD78 /* VideoRepository.swift */; };
+		073190E028D2549200D8FD78 /* ModelLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 073190DF28D2549200D8FD78 /* ModelLibrary */; };
+		073190E328D255F600D8FD78 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190E228D255F600D8FD78 /* Environment.swift */; };
+		073190E628D2635600D8FD78 /* DependencyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190E528D2635600D8FD78 /* DependencyResolver.swift */; };
+		073190E828D2648E00D8FD78 /* DependencyDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190E728D2648E00D8FD78 /* DependencyDefault.swift */; };
+		073190EB28D2681800D8FD78 /* VideoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190EA28D2681800D8FD78 /* VideoListPresenter.swift */; };
+		073190EF28D27D2900D8FD78 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190EE28D27D2900D8FD78 /* Model.swift */; };
+		073190F228D287B400D8FD78 /* VideoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190F128D287B400D8FD78 /* VideoItemCell.swift */; };
+		073190F428D3CADD00D8FD78 /* UIImageViewURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190F328D3CADC00D8FD78 /* UIImageViewURL.swift */; };
+		073190F628D3CB6A00D8FD78 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073190F528D3CB6A00D8FD78 /* ImageCache.swift */; };
 		0776394A28CF6FF400DA2498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776394928CF6FF400DA2498 /* AppDelegate.swift */; };
 		0776394C28CF6FF400DA2498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776394B28CF6FF400DA2498 /* SceneDelegate.swift */; };
 		0776394E28CF6FF400DA2498 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776394D28CF6FF400DA2498 /* ViewController.swift */; };
 		0776395128CF6FF400DA2498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776394F28CF6FF400DA2498 /* Main.storyboard */; };
 		0776395328CF6FF600DA2498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0776395228CF6FF600DA2498 /* Assets.xcassets */; };
 		0776395628CF6FF600DA2498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776395428CF6FF600DA2498 /* LaunchScreen.storyboard */; };
-		0776396128CF6FF700DA2498 /* VideoClubNOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776396028CF6FF700DA2498 /* VideoClubNOTests.swift */; };
 		0776396B28CF6FF700DA2498 /* VideoClubNOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776396A28CF6FF700DA2498 /* VideoClubNOUITests.swift */; };
 		0776396D28CF6FF700DA2498 /* VideoClubNOUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776396C28CF6FF700DA2498 /* VideoClubNOUITestsLaunchTests.swift */; };
-		0776397B28CF702E00DA2498 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776397A28CF702E00DA2498 /* Protocols.swift */; };
-		0776397D28CF709100DA2498 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776397C28CF709100DA2498 /* Types.swift */; };
-		0776398028CF70DE00DA2498 /* SLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776397F28CF70DE00DA2498 /* SLRequest.swift */; };
-		0776398228CF713100DA2498 /* SLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398128CF713100DA2498 /* SLOperation.swift */; };
-		0776398428CF714A00DA2498 /* SLNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398328CF714A00DA2498 /* SLNetworkSession.swift */; };
-		0776398628CF717400DA2498 /* SLNetworkSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398528CF717400DA2498 /* SLNetworkSession+Extension.swift */; };
-		0776398828CF718F00DA2498 /* SLRequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398728CF718F00DA2498 /* SLRequestDispatcher.swift */; };
-		0776398A28D0D91E00DA2498 /* IntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776398928D0D91E00DA2498 /* IntegrationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,15 @@
 /* Begin PBXFileReference section */
 		073190D528D2274000D8FD78 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		073190D728D2276300D8FD78 /* EmployeeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeResponse.swift; sourceTree = "<group>"; };
+		073190DC28D253EE00D8FD78 /* VideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepository.swift; sourceTree = "<group>"; };
+		073190E228D255F600D8FD78 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		073190E528D2635600D8FD78 /* DependencyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolver.swift; sourceTree = "<group>"; };
+		073190E728D2648E00D8FD78 /* DependencyDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyDefault.swift; sourceTree = "<group>"; };
+		073190EA28D2681800D8FD78 /* VideoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListPresenter.swift; sourceTree = "<group>"; };
+		073190EE28D27D2900D8FD78 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		073190F128D287B400D8FD78 /* VideoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemCell.swift; sourceTree = "<group>"; };
+		073190F328D3CADC00D8FD78 /* UIImageViewURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewURL.swift; sourceTree = "<group>"; };
+		073190F528D3CB6A00D8FD78 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		0776394628CF6FF400DA2498 /* VideoClubNO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoClubNO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776394928CF6FF400DA2498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0776394B28CF6FF400DA2498 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,18 +68,9 @@
 		0776395528CF6FF600DA2498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0776395728CF6FF600DA2498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0776395C28CF6FF700DA2498 /* VideoClubNOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoClubNOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0776396028CF6FF700DA2498 /* VideoClubNOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoClubNOTests.swift; sourceTree = "<group>"; };
 		0776396628CF6FF700DA2498 /* VideoClubNOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoClubNOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776396A28CF6FF700DA2498 /* VideoClubNOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoClubNOUITests.swift; sourceTree = "<group>"; };
 		0776396C28CF6FF700DA2498 /* VideoClubNOUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoClubNOUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0776397A28CF702E00DA2498 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		0776397C28CF709100DA2498 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		0776397F28CF70DE00DA2498 /* SLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLRequest.swift; sourceTree = "<group>"; };
-		0776398128CF713100DA2498 /* SLOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLOperation.swift; sourceTree = "<group>"; };
-		0776398328CF714A00DA2498 /* SLNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLNetworkSession.swift; sourceTree = "<group>"; };
-		0776398528CF717400DA2498 /* SLNetworkSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SLNetworkSession+Extension.swift"; sourceTree = "<group>"; };
-		0776398728CF718F00DA2498 /* SLRequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLRequestDispatcher.swift; sourceTree = "<group>"; };
-		0776398928D0D91E00DA2498 /* IntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073190E028D2549200D8FD78 /* ModelLibrary in Frameworks */,
+				073190DB28D252C800D8FD78 /* ServiceLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		073190E128D255E500D8FD78 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				073190E228D255F600D8FD78 /* Environment.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		073190E428D2632D00D8FD78 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				073190E528D2635600D8FD78 /* DependencyResolver.swift */,
+				073190E728D2648E00D8FD78 /* DependencyDefault.swift */,
+				073190F528D3CB6A00D8FD78 /* ImageCache.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		073190E928D267E800D8FD78 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				073190EA28D2681800D8FD78 /* VideoListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		073190EC28D270E600D8FD78 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				073190DC28D253EE00D8FD78 /* VideoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		073190ED28D27D1C00D8FD78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				073190EE28D27D2900D8FD78 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		073190F028D2879E00D8FD78 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				073190F128D287B400D8FD78 /* VideoItemCell.swift */,
+				073190F328D3CADC00D8FD78 /* UIImageViewURL.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		0776393D28CF6FF400DA2498 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +174,12 @@
 		0776394828CF6FF400DA2498 /* VideoClubNO */ = {
 			isa = PBXGroup;
 			children = (
-				0776397928CF700F00DA2498 /* ServiceLayer */,
+				073190F028D2879E00D8FD78 /* ViewComponents */,
+				073190ED28D27D1C00D8FD78 /* Model */,
+				073190EC28D270E600D8FD78 /* Repositories */,
+				073190E928D267E800D8FD78 /* Presenter */,
+				073190E428D2632D00D8FD78 /* Classes */,
+				073190E128D255E500D8FD78 /* Types */,
 				0776394928CF6FF400DA2498 /* AppDelegate.swift */,
 				0776394B28CF6FF400DA2498 /* SceneDelegate.swift */,
 				0776394D28CF6FF400DA2498 /* ViewController.swift */,
@@ -134,8 +194,6 @@
 		0776395F28CF6FF700DA2498 /* VideoClubNOTests */ = {
 			isa = PBXGroup;
 			children = (
-				0776396028CF6FF700DA2498 /* VideoClubNOTests.swift */,
-				0776398928D0D91E00DA2498 /* IntegrationTest.swift */,
 				073190D528D2274000D8FD78 /* Employee.swift */,
 				073190D728D2276300D8FD78 /* EmployeeResponse.swift */,
 			);
@@ -149,28 +207,6 @@
 				0776396C28CF6FF700DA2498 /* VideoClubNOUITestsLaunchTests.swift */,
 			);
 			path = VideoClubNOUITests;
-			sourceTree = "<group>";
-		};
-		0776397928CF700F00DA2498 /* ServiceLayer */ = {
-			isa = PBXGroup;
-			children = (
-				0776397E28CF70D100DA2498 /* Impl */,
-				0776397A28CF702E00DA2498 /* Protocols.swift */,
-				0776397C28CF709100DA2498 /* Types.swift */,
-			);
-			path = ServiceLayer;
-			sourceTree = "<group>";
-		};
-		0776397E28CF70D100DA2498 /* Impl */ = {
-			isa = PBXGroup;
-			children = (
-				0776397F28CF70DE00DA2498 /* SLRequest.swift */,
-				0776398128CF713100DA2498 /* SLOperation.swift */,
-				0776398328CF714A00DA2498 /* SLNetworkSession.swift */,
-				0776398528CF717400DA2498 /* SLNetworkSession+Extension.swift */,
-				0776398728CF718F00DA2498 /* SLRequestDispatcher.swift */,
-			);
-			path = Impl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +225,10 @@
 			dependencies = (
 			);
 			name = VideoClubNO;
+			packageProductDependencies = (
+				073190DA28D252C800D8FD78 /* ServiceLayer */,
+				073190DF28D2549200D8FD78 /* ModelLibrary */,
+			);
 			productName = VideoClubNO;
 			productReference = 0776394628CF6FF400DA2498 /* VideoClubNO.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +301,10 @@
 				Base,
 			);
 			mainGroup = 0776393D28CF6FF400DA2498;
+			packageReferences = (
+				073190D928D252C800D8FD78 /* XCRemoteSwiftPackageReference "sserviceLibrary" */,
+				073190DE28D2549200D8FD78 /* XCRemoteSwiftPackageReference "mymodel" */,
+			);
 			productRefGroup = 0776394728CF6FF400DA2498 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,16 +348,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073190EF28D27D2900D8FD78 /* Model.swift in Sources */,
 				0776394E28CF6FF400DA2498 /* ViewController.swift in Sources */,
-				0776398028CF70DE00DA2498 /* SLRequest.swift in Sources */,
+				073190F428D3CADD00D8FD78 /* UIImageViewURL.swift in Sources */,
 				0776394A28CF6FF400DA2498 /* AppDelegate.swift in Sources */,
 				0776394C28CF6FF400DA2498 /* SceneDelegate.swift in Sources */,
-				0776397D28CF709100DA2498 /* Types.swift in Sources */,
-				0776398828CF718F00DA2498 /* SLRequestDispatcher.swift in Sources */,
-				0776397B28CF702E00DA2498 /* Protocols.swift in Sources */,
-				0776398428CF714A00DA2498 /* SLNetworkSession.swift in Sources */,
-				0776398228CF713100DA2498 /* SLOperation.swift in Sources */,
-				0776398628CF717400DA2498 /* SLNetworkSession+Extension.swift in Sources */,
+				073190F228D287B400D8FD78 /* VideoItemCell.swift in Sources */,
+				073190F628D3CB6A00D8FD78 /* ImageCache.swift in Sources */,
+				073190DD28D253EE00D8FD78 /* VideoRepository.swift in Sources */,
+				073190E628D2635600D8FD78 /* DependencyResolver.swift in Sources */,
+				073190E328D255F600D8FD78 /* Environment.swift in Sources */,
+				073190EB28D2681800D8FD78 /* VideoListPresenter.swift in Sources */,
+				073190E828D2648E00D8FD78 /* DependencyDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,9 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073190D828D2276300D8FD78 /* EmployeeResponse.swift in Sources */,
-				0776398A28D0D91E00DA2498 /* IntegrationTest.swift in Sources */,
 				073190D628D2274000D8FD78 /* Employee.swift in Sources */,
-				0776396128CF6FF700DA2498 /* VideoClubNOTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +704,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		073190D928D252C800D8FD78 /* XCRemoteSwiftPackageReference "sserviceLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bolekhub/sserviceLibrary";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		073190DE28D2549200D8FD78 /* XCRemoteSwiftPackageReference "mymodel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bolekhub/mymodel";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		073190DA28D252C800D8FD78 /* ServiceLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 073190D928D252C800D8FD78 /* XCRemoteSwiftPackageReference "sserviceLibrary" */;
+			productName = ServiceLayer;
+		};
+		073190DF28D2549200D8FD78 /* ModelLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 073190DE28D2549200D8FD78 /* XCRemoteSwiftPackageReference "mymodel" */;
+			productName = ModelLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0776393E28CF6FF400DA2498 /* Project object */;
 }
