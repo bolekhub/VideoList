@@ -6,6 +6,7 @@
 //
 
 import ModelLibrary
+import Foundation
 
 struct Catalog: Codable {
     private let cats: [Category]
@@ -44,7 +45,8 @@ struct VideoSourceItem: Codable, VideoSourceItemRepresentable {
     let subtitle: String
     let description: String
     let sources:[String]
-    
+    let uid = UUID()
+
     enum CodingKeys: String, CodingKey {
         case thumbnail = "thumb"
         case title
@@ -68,4 +70,28 @@ struct VideoSourceItem: Codable, VideoSourceItemRepresentable {
         }
         self.sources = securedSources
     }
+    
+    init(representable: VideoSourceItemRepresentable) {
+        self.thumbnail = representable.thumbnail
+        self.title = representable.title
+        self.subtitle = representable.subtitle
+        self.description = representable.description
+        self.sources = representable.sources
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uid)
+        hasher.combine(thumbnail)
+        hasher.combine(title)
+    }
+    
+    static func == (lhs: VideoSourceItem, rhs: VideoSourceItem) -> Bool {
+        return lhs.uid == rhs.uid &&
+               lhs.thumbnail == rhs.thumbnail &&
+               lhs.title == rhs.title
+    }
+}
+
+extension VideoSourceItem: Hashable {
+    
 }

@@ -78,11 +78,11 @@ private extension UIImageViewURL {
             .compactMap{$0}
             //.receive(on: RunLoop.main)
             // .assign(to: \.image, on: self)
-            .sink(receiveValue: { image in
-                DispatchQueue.main.async {
-                    self.image = image
-                }
-            })
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.image, on: self)
+            //.sink(receiveValue: { image in
+            //    self.image = image
+            //})
             .store(in: &subscriptions)
     }
 }

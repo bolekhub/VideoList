@@ -22,9 +22,15 @@ final class VideoPresenter {
 extension VideoPresenter: VideoPresenterProtocol {
     func fetchVideos() {
         videoRepository.getVideos()
+            .flatMap { representableArray -> AnyPublisher<[VideoSourceItem]?, Never> in
+                let hunt = representableArray?.compactMap({ representableItem in
+                    return VideoSourceItem(representable: representableItem)
+                })
+                return Just(hunt).eraseToAnyPublisher()
+            }
             .compactMap{$0}
-            .sink { items in
-                self.viewProtocol?.didReceive(videos: items)
+            .sink { videoItems in
+                self.viewProtocol?.videoSubject.send(videoItems)
             }.store(in: &subscriptions)
     }
 }
