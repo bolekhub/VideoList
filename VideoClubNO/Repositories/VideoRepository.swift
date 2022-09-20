@@ -18,8 +18,8 @@ protocol VideoRepositoryProtocol {
 struct VideoRepository: VideoRepositoryProtocol {
     @Injected(\.networkProvider) private var dispatcher: RequestDispatcherProtocol
 
-    var environment: SLEnvironmentProtocol?
-    var response: SLResponseProtocol?
+    private var environment: SLEnvironmentProtocol?
+    private var response: SLResponseProtocol?
     
     func getVideos(_ completion: @escaping ([VideoSourceItemRepresentable]?) -> Void) {
         let request = SLRequest(requestType: .requestURL([:]), serviceName: "media.json")

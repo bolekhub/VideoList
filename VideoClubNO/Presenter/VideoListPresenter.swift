@@ -13,15 +13,19 @@ protocol VideoPresenterProtocol {
     func fetchVideos()
 }
 
-final class VideoPresenter {
-    let videoRepository = VideoRepository()
+final class VideoPresenter<R> where R: VideoRepositoryProtocol {
+    private let repository: R
     weak var viewProtocol: ViewControllerProtocol?
     var subscriptions = Set<AnyCancellable>()
+    
+    init(videoRepository: R) {
+        self.repository = videoRepository
+    }
 }
 
 extension VideoPresenter: VideoPresenterProtocol {
     func fetchVideos() {
-        videoRepository.getVideos()
+        repository.getVideos()
             .compactMap{$0}
             .sink { items in
                 self.viewProtocol?.didReceive(videos: items)

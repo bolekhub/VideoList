@@ -27,7 +27,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = VideoPresenter()
+        presenter = VideoPresenter(videoRepository: VideoRepository())
         presenter?.viewProtocol = self
         presenter?.fetchVideos()
     }
